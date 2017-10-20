@@ -72,6 +72,7 @@
     renderer.setSize(w, h);
     document.body.appendChild(renderer.domElement);
     renderer.setClearColorHex(0xEEEEEE, 1.0);
+	// Set camera frustrum parameters
     var camera = new THREE.PerspectiveCamera(45, w / h, 1, 10000);
     camera.position.z = 200;
     camera.position.x = -100;
@@ -79,7 +80,8 @@
     var scene = new THREE.Scene();
     var scatterPlot = new THREE.Object3D();
     scene.add(scatterPlot);
-    scatterPlot.rotation.y = 0;
+	// Set initial orientation of render
+    scatterPlot.rotation.y = 100;
     function v(x, y, z, G) {
         return new THREE.Vector4(x, y, z, G);
     }
@@ -163,45 +165,50 @@
     );
     var lineMat = new THREE.LineBasicMaterial({
         color: 0x000000,
-        lineWidth: 1
+        lineWidth: 2
     });
     var line = new THREE.Line(lineGeo, lineMat);
     line.type = THREE.Lines;
     scatterPlot.add(line);
-    var titleX = createText2D('Confidence=0');
-    titleX.position.x = xScale(vpts.xMin) - 12,
-    titleX.position.y = 5;
+    var titleX = createText2D('Confidence');
+    titleX.position.x = xScale(vpts.zMin)+25,
+    titleX.position.y = - 50;
+	titleX.position.z = zScale(vpts.xMin)+20;
     scatterPlot.add(titleX);
     //var valueX = createText2D(format(xExent[0]));
     //valueX.position.x = xScale(vpts.xMin) - 12,
     //valueX.position.y = -5;
     //scatterPlot.add(valueX);
-    var titleX = createText2D('Confidence=10');
-    titleX.position.x = xScale(vpts.xMax) + 12;
-    titleX.position.y = 5;
-    scatterPlot.add(titleX);
+    //var titleX = createText2D('Confidence=10');
+    //titleX.position.x = xScale(vpts.xMax) + 12;
+    //titleX.position.y = 5;
+    //scatterPlot.add(titleX);
     //var valueX = createText2D(format(xExent[1]));
     //valueX.position.x = xScale(vpts.xMax) + 12,
     //valueX.position.y = -5;
     //scatterPlot.add(valueX);
-    var titleY = createText2D('Humility=0');
-    titleY.position.y = yScale(vpts.yMin) - 5;
+    var titleY = createText2D('Humility');
+    titleY.position.y = yScale(vpts.xMin) + 50;
+	titleY.position.x = - 50;
+	titleY.position.z = zScale(vpts.xMin)+20;
     scatterPlot.add(titleY);
     //var valueY = createText2D(format(yExent[0]));
     //valueY.position.y = yScale(vpts.yMin) - 15,
     //scatterPlot.add(valueY);
-    var titleY = createText2D('Humility=10');
-    titleY.position.y = yScale(vpts.yMax) + 15;
-    scatterPlot.add(titleY);
+    //var titleY = createText2D('Humility=10');
+    //titleY.position.y = yScale(vpts.yMax) + 15;
+    //scatterPlot.add(titleY);
     //var valueY = createText2D(format(yExent[1]));
     //valueY.position.y = yScale(vpts.yMax) + 5,
     //scatterPlot.add(valueY);
-    var titleZ = createText2D('Intelligence=0');
-    titleZ.position.z = zScale(vpts.zMin) + 2;
+    var titleZ = createText2D('Intelligence');
+    titleZ.position.x = xScale(vpts.zMin)-25,
+    titleZ.position.y = -50;
+	titleZ.position.z = zScale(vpts.zMin)+50;
     scatterPlot.add(titleZ);
-    var titleZ = createText2D('Intelligence=10');
-    titleZ.position.z = zScale(vpts.zMax) + 2;
-    scatterPlot.add(titleZ);
+    //var titleZ = createText2D('Intelligence=10');
+    //titleZ.position.z = zScale(vpts.zMax) + 2;
+    //scatterPlot.add(titleZ);
     var mat = new THREE.ParticleBasicMaterial({
         vertexColors: true,
         size: 10
