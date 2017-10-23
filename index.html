@@ -82,8 +82,8 @@
     scene.add(scatterPlot);
 	// Set initial orientation of render
     scatterPlot.rotation.y = 100;
-    function v(x, y, z, G) {
-        return new THREE.Vector4(x, y, z, G);
+    function v(x, y, z) {
+        return new THREE.Vector3(x, y, z);
     }
     var unfiltered = [],
         lowPass = [],
@@ -135,33 +135,15 @@
                   .range([-50,50]);		  
     var lineGeo = new THREE.Geometry();
     lineGeo.vertices.push(
-        //v(xScale(vpts.xMin), yScale(vpts.yCen), zScale(vpts.zCen)), v(xScale(vpts.xMax), yScale(vpts.yCen), zScale(vpts.zCen)),
-        //v(xScale(vpts.xCen), yScale(vpts.yMin), zScale(vpts.zCen)), v(xScale(vpts.xCen), yScale(vpts.yMax), zScale(vpts.zCen)),
-        //v(xScale(vpts.xCen), yScale(vpts.yCen), zScale(vpts.zMax)), v(xScale(vpts.xCen), yScale(vpts.yCen), zScale(vpts.zMin)),
         v(xScale(vpts.xMin), yScale(vpts.yMax), zScale(vpts.zMin)), v(xScale(vpts.xMax), yScale(vpts.yMax), zScale(vpts.zMin)),
         v(xScale(vpts.xMin), yScale(vpts.yMin), zScale(vpts.zMin)), v(xScale(vpts.xMax), yScale(vpts.yMin), zScale(vpts.zMin)),
-        //v(xScale(vpts.xMin), yScale(vpts.yMax), zScale(vpts.zMax)), v(xScale(vpts.xMax), yScale(vpts.yMax), zScale(vpts.zMax)),
         v(xScale(vpts.xMin), yScale(vpts.yMin), zScale(vpts.zMax)), v(xScale(vpts.xMax), yScale(vpts.yMin), zScale(vpts.zMax)),
-        //v(xScale(vpts.xMin), yScale(vpts.yCen), zScale(vpts.zMax)), v(xScale(vpts.xMax), yScale(vpts.yCen), zScale(vpts.zMax)),
-        //v(xScale(vpts.xMin), yScale(vpts.yCen), zScale(vpts.zMin)), v(xScale(vpts.xMax), yScale(vpts.yCen), zScale(vpts.zMin)),
-        //v(xScale(vpts.xMin), yScale(vpts.yMax), zScale(vpts.zCen)), v(xScale(vpts.xMax), yScale(vpts.yMax), zScale(vpts.zCen)),
-        //v(xScale(vpts.xMin), yScale(vpts.yMin), zScale(vpts.zCen)), v(xScale(vpts.xMax), yScale(vpts.yMin), zScale(vpts.zCen)),
         v(xScale(vpts.xMax), yScale(vpts.yMin), zScale(vpts.zMin)), v(xScale(vpts.xMax), yScale(vpts.yMax), zScale(vpts.zMin)),
         v(xScale(vpts.xMin), yScale(vpts.yMin), zScale(vpts.zMin)), v(xScale(vpts.xMin), yScale(vpts.yMax), zScale(vpts.zMin)),
-        //v(xScale(vpts.xMax), yScale(vpts.yMin), zScale(vpts.zMax)), v(xScale(vpts.xMax), yScale(vpts.yMax), zScale(vpts.zMax)),
         v(xScale(vpts.xMin), yScale(vpts.yMin), zScale(vpts.zMax)), v(xScale(vpts.xMin), yScale(vpts.yMax), zScale(vpts.zMax)),
-        //v(xScale(vpts.xCen), yScale(vpts.yMin), zScale(vpts.zMax)), v(xScale(vpts.xCen), yScale(vpts.yMax), zScale(vpts.zMax)),
-        //v(xScale(vpts.xCen), yScale(vpts.yMin), zScale(vpts.zMin)), v(xScale(vpts.xCen), yScale(vpts.yMax), zScale(vpts.zMin)),
-        //v(xScale(vpts.xMax), yScale(vpts.yMin), zScale(vpts.zCen)), v(xScale(vpts.xMax), yScale(vpts.yMax), zScale(vpts.zCen)),
-        //v(xScale(vpts.xMin), yScale(vpts.yMin), zScale(vpts.zCen)), v(xScale(vpts.xMin), yScale(vpts.yMax), zScale(vpts.zCen)),
-        //v(xScale(vpts.xMax), yScale(vpts.yMax), zScale(vpts.zMin)), v(xScale(vpts.xMax), yScale(vpts.yMax), zScale(vpts.zMax)),
         v(xScale(vpts.xMax), yScale(vpts.yMin), zScale(vpts.zMin)), v(xScale(vpts.xMax), yScale(vpts.yMin), zScale(vpts.zMax)),
         v(xScale(vpts.xMin), yScale(vpts.yMax), zScale(vpts.zMin)), v(xScale(vpts.xMin), yScale(vpts.yMax), zScale(vpts.zMax)),
-        v(xScale(vpts.xMin), yScale(vpts.yMin), zScale(vpts.zMin)), v(xScale(vpts.xMin), yScale(vpts.yMin), zScale(vpts.zMax)),
-        //v(xScale(vpts.xMin), yScale(vpts.yCen), zScale(vpts.zMin)), v(xScale(vpts.xMin), yScale(vpts.yCen), zScale(vpts.zMax)),
-        //v(xScale(vpts.xMax), yScale(vpts.yCen), zScale(vpts.zMin)), v(xScale(vpts.xMax), yScale(vpts.yCen), zScale(vpts.zMax)),
-        //v(xScale(vpts.xCen), yScale(vpts.yMax), zScale(vpts.zMin)), v(xScale(vpts.xCen), yScale(vpts.yMax), zScale(vpts.zMin)),
-        //v(xScale(vpts.xCen), yScale(vpts.yMin), zScale(vpts.zMin)), v(xScale(vpts.xCen), yScale(vpts.yMin), zScale(vpts.zMax))
+        v(xScale(vpts.xMin), yScale(vpts.yMin), zScale(vpts.zMin)), v(xScale(vpts.xMin), yScale(vpts.yMin), zScale(vpts.zMax))
     );
     var lineMat = new THREE.LineBasicMaterial({
         color: 0x000000,
@@ -175,40 +157,16 @@
     titleX.position.y = - 50;
 	titleX.position.z = zScale(vpts.xMin)+20;
     scatterPlot.add(titleX);
-    //var valueX = createText2D(format(xExent[0]));
-    //valueX.position.x = xScale(vpts.xMin) - 12,
-    //valueX.position.y = -5;
-    //scatterPlot.add(valueX);
-    //var titleX = createText2D('Confidence=10');
-    //titleX.position.x = xScale(vpts.xMax) + 12;
-    //titleX.position.y = 5;
-    //scatterPlot.add(titleX);
-    //var valueX = createText2D(format(xExent[1]));
-    //valueX.position.x = xScale(vpts.xMax) + 12,
-    //valueX.position.y = -5;
-    //scatterPlot.add(valueX);
     var titleY = createText2D('Humility');
     titleY.position.y = yScale(vpts.xMin) + 50;
 	titleY.position.x = - 50;
 	titleY.position.z = zScale(vpts.xMin)+20;
     scatterPlot.add(titleY);
-    //var valueY = createText2D(format(yExent[0]));
-    //valueY.position.y = yScale(vpts.yMin) - 15,
-    //scatterPlot.add(valueY);
-    //var titleY = createText2D('Humility=10');
-    //titleY.position.y = yScale(vpts.yMax) + 15;
-    //scatterPlot.add(titleY);
-    //var valueY = createText2D(format(yExent[1]));
-    //valueY.position.y = yScale(vpts.yMax) + 5,
-    //scatterPlot.add(valueY);
     var titleZ = createText2D('Intelligence');
     titleZ.position.x = xScale(vpts.zMin)-25,
     titleZ.position.y = -50;
 	titleZ.position.z = zScale(vpts.zMin)+50;
     scatterPlot.add(titleZ);
-    //var titleZ = createText2D('Intelligence=10');
-    //titleZ.position.z = zScale(vpts.zMax) + 2;
-    //scatterPlot.add(titleZ);
     var mat = new THREE.ParticleBasicMaterial({
         vertexColors: true,
         size: 10
@@ -225,10 +183,10 @@
         pointGeo.vertices[i].angle = Math.atan2(z, x);
         pointGeo.vertices[i].radius = Math.sqrt(x * x + z * z);
         pointGeo.vertices[i].speed = (z / 100) * (x / 100);
-		// **** Assign colors to coordinates *** msw
+		// **** Assign colors to coordinates
         pointGeo.colors.push(new THREE.Color().setRGB(
-          hexToRgb(colour(1)).r / 255, hexToRgb(colour(1)).g / 255, hexToRgb(colour(1)).b / 255 
-		  //function(d) { return colour(d.G); }
+		  //colour.fromarray(G)
+          hexToRgb(colour(2)).r / 255, hexToRgb(colour(10)).g / 255, hexToRgb(colour(5)).b / 255
         ));	
     }
 	
