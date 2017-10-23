@@ -113,15 +113,15 @@
         yExent = d3.extent(unfiltered, function (d) {return d.y; }),
         zExent = d3.extent(unfiltered, function (d) {return d.z; });
     var vpts = {
-        xMax: xExent[1],
-        xCen: (xExent[1] + xExent[0]) / 2,
-        xMin: xExent[0],
-        yMax: yExent[1],
-        yCen: (yExent[1] + yExent[0]) / 2,
-        yMin: yExent[0],
-        zMax: zExent[1],
-        zCen: (zExent[1] + zExent[0]) / 2,
-        zMin: zExent[0]
+        xMax: 10,
+        xCen: 5,
+        xMin: 0,
+        yMax: 10,
+        yCen: 5,
+        yMin: 0,
+        zMax: 10,
+        zCen: 5,
+        zMin: 0
     }
     var colour = d3.scale.category20c();
     var xScale = d3.scale.linear()
@@ -153,19 +153,19 @@
     line.type = THREE.Lines;
     scatterPlot.add(line);
     var titleX = createText2D('Confidence');
-    titleX.position.x = xScale(vpts.zMin)+25,
+    titleX.position.x = xScale(0)+55,
     titleX.position.y = - 50;
-	titleX.position.z = zScale(vpts.xMin)+20;
+	titleX.position.z = zScale(0);
     scatterPlot.add(titleX);
     var titleY = createText2D('Humility');
-    titleY.position.y = yScale(vpts.xMin) + 50;
-	titleY.position.x = - 50;
-	titleY.position.z = zScale(vpts.xMin)+20;
+    titleY.position.y = yScale(0) + 50;
+	titleY.position.x = - 60;
+	titleY.position.z = zScale(0);
     scatterPlot.add(titleY);
     var titleZ = createText2D('Intelligence');
-    titleZ.position.x = xScale(vpts.zMin)-25,
+    titleZ.position.x = xScale(0)-15,
     titleZ.position.y = -50;
-	titleZ.position.z = zScale(vpts.zMin)+50;
+	titleZ.position.z = zScale(0)+70;
     scatterPlot.add(titleZ);
     var mat = new THREE.ParticleBasicMaterial({
         vertexColors: true,
