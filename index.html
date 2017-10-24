@@ -25,6 +25,18 @@
 <!--div id="container"></div-->
     <script>
     // <!--
+	var text2 = document.createElement('div');
+	text2.style.position = 'absolute';
+	//text2.style.zIndex = 1;    // if you still don't see the label, try uncommenting this
+	text2.style.width = 200;
+	text2.style.height = 200;
+	//text2.style.backgroundColor = "grey";
+	text2.innerHTML = "<b>Survey Results</b> <br>MALES:blue  FEMALES:purple";
+	text2.style.top = 20 + 'px';
+	text2.style.left = 350 + 'px';
+	document.body.appendChild(text2);
+	
+	
     function createTextCanvas(text, color, font, size) {
         size = size || 12;
         var canvas = document.createElement('canvas');
@@ -85,9 +97,7 @@
     function v(x, y, z) {
         return new THREE.Vector3(x, y, z);
     }
-    var unfiltered = [],
-        lowPass = [],
-        highPass = [];
+    var unfiltered = [];
     var format = d3.format("+.3f");
     var data = d3.csv("conf_hum_int_data.csv", function (d) {
         
@@ -96,22 +106,16 @@
                 x: +d.x,
                 y: +d.y,
                 z: +d.z,
-				G: +d.G
+				g: d.g
             };
-            lowPass[i] = {
-                x: +d.lp_x,
-                y: +d.lp_y,
-                z: +d.lp_z
-            };
-            highPass[i] = {
-                x: +d.hp_x,
-                y: +d.hp_y,
-                z: +d.hp_z
-            }
+			//console.log("data:", unfiltered[i]);
         })
     var xExent = d3.extent(unfiltered, function (d) {return d.x; }),
         yExent = d3.extent(unfiltered, function (d) {return d.y; }),
         zExent = d3.extent(unfiltered, function (d) {return d.z; });
+		gCat =   d3.map(unfiltered, function (d) {return d.g; }).size();
+		
+		
     var vpts = {
         xMax: 10,
         xCen: 5,
@@ -123,7 +127,7 @@
         zCen: 5,
         zMin: 0
     }
-    var colour = d3.scale.category20c();
+   
     var xScale = d3.scale.linear()
                   .domain(xExent)
                   .range([-50,50]);
@@ -132,7 +136,11 @@
                   .range([-50,50]);                  
     var zScale = d3.scale.linear()
                   .domain(zExent)
-                  .range([-50,50]);		  
+                  .range([-50,50]);
+	var gRange = d3.scale.ordinal()
+				  .domain(gCat)
+				  .range([1,2]);
+				  
     var lineGeo = new THREE.Geometry();
     lineGeo.vertices.push(
         v(xScale(vpts.xMin), yScale(vpts.yMax), zScale(vpts.zMin)), v(xScale(vpts.xMax), yScale(vpts.yMax), zScale(vpts.zMin)),
@@ -171,24 +179,52 @@
         vertexColors: true,
         size: 10
     });
+	
+	var colour = d3.scale.category20c();
     var pointCount = unfiltered.length;
     var pointGeo = new THREE.Geometry();
 	
-    for (var i = 0; i < pointCount; i ++) {
-        var x = xScale(unfiltered[i].x);
-        var y = yScale(unfiltered[i].y);
-        var z = zScale(unfiltered[i].z);
-        pointGeo.vertices.push(new THREE.Vector3(x, y, z));
-        console.log(pointGeo.vertices);
-        pointGeo.vertices[i].angle = Math.atan2(z, x);
-        pointGeo.vertices[i].radius = Math.sqrt(x * x + z * z);
-        pointGeo.vertices[i].speed = (z / 100) * (x / 100);
-		// **** Assign colors to coordinates
-        pointGeo.colors.push(new THREE.Color().setRGB(
-		  //colour.fromarray(G)
-          hexToRgb(colour(2)).r / 255, hexToRgb(colour(10)).g / 255, hexToRgb(colour(5)).b / 255
-        ));	
-    }
+	for (var i = 0; i < pointCount; i ++) {	
+		var x = xScale(unfiltered[i].x);
+		var y = yScale(unfiltered[i].y);
+		var z = zScale(unfiltered[i].z);
+		pointGeo.vertices.push(new THREE.Vector3(x, y, z));
+		
+		if (unfiltered[i].g == "Male") {
+			var color_assign_r = 0;
+			var color_assign_g = 0;
+			var color_assign_b = 10;
+
+		} else if (unfiltered[i].g == "Female") {
+			var color_assign_r = 30;
+			var color_assign_g = 0;
+			var color_assign_b = 10;
+		} else {
+			var color_assign_r = 10;
+			var color_assign_g = 10;
+			var color_assign_b = 10;
+		};
+		
+		pointGeo.colors.push(new THREE.Color().setRGB(
+			  hexToRgb(colour(color_assign_r)).r/255, hexToRgb(colour(color_assign_g)).g/255, hexToRgb(colour(color_assign_b)).b/255
+		));
+	}
+	
+    //for (var i = 0; i < pointCount; i ++) {
+      //  var x = xScale(unfiltered[i].x);
+      //  var y = yScale(unfiltered[i].y);
+      //  var z = zScale(unfiltered[i].z);
+	//	var Gender = gRange(unfiltered[i].g);
+      //  pointGeo.vertices.push(new THREE.Vector3(x, y, z));
+		// Added this push so pointGeo.colors[i] is defined 
+		//pointGeo.colors.push( new THREE.Color() );
+		//pointGeo.colors[i].G = unfiltered[i].G;
+
+		
+        //pointGeo.colors.push(new THREE.Color().setRGB(
+        //  hexToRgb(colour(i)).r / 255, hexToRgb(colour(i)).g / 255, hexToRgb(colour(i)).b / 255
+        //));	
+    //}
 	
     var points = new THREE.ParticleSystem(pointGeo, mat);
     scatterPlot.add(points);
