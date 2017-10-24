@@ -210,22 +210,6 @@
 		));
 	}
 	
-    //for (var i = 0; i < pointCount; i ++) {
-      //  var x = xScale(unfiltered[i].x);
-      //  var y = yScale(unfiltered[i].y);
-      //  var z = zScale(unfiltered[i].z);
-	//	var Gender = gRange(unfiltered[i].g);
-      //  pointGeo.vertices.push(new THREE.Vector3(x, y, z));
-		// Added this push so pointGeo.colors[i] is defined 
-		//pointGeo.colors.push( new THREE.Color() );
-		//pointGeo.colors[i].G = unfiltered[i].G;
-
-		
-        //pointGeo.colors.push(new THREE.Color().setRGB(
-        //  hexToRgb(colour(i)).r / 255, hexToRgb(colour(i)).g / 255, hexToRgb(colour(i)).b / 255
-        //));	
-    //}
-	
     var points = new THREE.ParticleSystem(pointGeo, mat);
     scatterPlot.add(points);
     renderer.render(scene, camera);
