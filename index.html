@@ -31,7 +31,7 @@
 	text2.style.width = 200;
 	text2.style.height = 200;
 	//text2.style.backgroundColor = "grey";
-	text2.innerHTML = "<b>Survey Results (n=75)</b> <br>MALES:blue    FEMALES:pink";
+	text2.innerHTML = "<b>Survey Results (n=101)</b> <br>MALES:blue    FEMALES:pink";
 	text2.style.top = 20 + 'px';
 	text2.style.left = 350 + 'px';
 	document.body.appendChild(text2);
@@ -206,6 +206,8 @@
 		};
 		
 		pointGeo.colors.push(new THREE.Color().setRGB(color_assign_r/255, color_assign_g/255, color_assign_b/255));
+		
+		console.log("Record:", i);
 	}
 	
     var points = new THREE.ParticleSystem(pointGeo, mat);
