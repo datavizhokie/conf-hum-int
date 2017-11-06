@@ -1,103 +1,117 @@
 x,y,z,g,generation,age,race
-7,5,8,Male,Millennials,34.51,White
+7,5,8,Male,Millennials,34.52810536,White
 8,4,7,Male,,,White
-8,5,9,Male,Millennials,31.02,White
-4,6,8,Male,Millennials,24.19,White
-9,4,6,Female,Millennials,36.72,White
-2,7,6,Male,Millennials,36.84,Asian
-10,1,6,Male,Millennials,25.30,White
-6,3,8,Female,Baby Boomers,65.84,White
-7,9,7,Male,Millennials,27.83,White
-7,6,8,Male,Millennials,30.17,White
-6,8,7,Female,Millennials,25.69,White
-9,6,7,Female,Millennials,28.31,White
-6,8,9,Male,Millennials,26.72,White
+8,5,9,Male,Millennials,31.0376944,White
+4,6,8,Male,Millennials,24.21029714,White
+9,4,6,Female,Millennials,36.73906426,White
+2,7,6,Male,Millennials,36.86235193,Asian
+10,1,6,Male,Millennials,25.31714645,White
+6,3,8,Female,Baby Boomers,65.8596122,White
+7,9,7,Male,Millennials,27.85413275,White
+7,6,8,Male,Millennials,30.1856396,White
+6,8,7,Female,Millennials,25.71440673,White
+9,6,7,Female,Millennials,28.33084508,White
+6,8,9,Male,Millennials,26.73906426,White
 5,5,5,Female,,,White
-7,8,7,Male,Millennials,25.84,White
-2,7,8,Male,Millennials,18.75,White
-8,5,9,Male,Millennials,32.91,White
-5,6,8,Female,Millennials,22.32,White
-2,8,5,Female,Millennials,17.37,Asian
-3,6,5,Female,Millennials,18.93,
+7,8,7,Male,Millennials,25.85687248,White
+2,7,8,Male,Millennials,18.7746807,White
+8,5,9,Male,Millennials,32.92536563,White
+5,6,8,Female,Millennials,22.34180399,White
+2,8,5,Female,Millennials,17.38837933,Asian
+3,6,5,Female,Millennials,18.95276289,
 7,7,6,Male,,,White
-3,8,8,Male,,,White
-1,9,3,Female,Millennials,22.94,White
-7,7,7,Female,Millennials,30.39,White
-6,5,8,Female,Millennials,21.07,White
-8,6,8,Female,Millennials,28.52,White
-4,7,7,Male,Millennials,15.59,American Indian or Alaska Native
-9,8,7,Male,Millennials,29.08,White
-1,6,4,Male,Millennials,20.58,White
-1,9,7,Male,Millennials,30.17,White
-8,5,9,Male,Millennials,36.38,White
+3,8,8,Male,Traditionalists,117.9226259,White
+1,9,3,Female,Millennials,22.95550262,White
+7,7,7,Female,Millennials,30.41303686,White
+6,5,8,Female,Millennials,21.09248892,White
+8,6,8,Female,Millennials,28.53632453,White
+4,7,7,Male,Millennials,15.60755741,American Indian or Alaska Native
+9,8,7,Male,Millennials,29.10344782,White
+1,6,4,Male,Millennials,20.59659851,White
+1,9,7,Male,Millennials,30.18837933,White
+8,5,9,Male,Millennials,36.39933823,White
 8,8,7,Male,,,White
-3,7,9,Female,Millennials,20.23,White
-3,5,9,Male,Millennials,16.30,White
-5,8,9,Male,Millennials,19.80,White
-4,8,6,Female,Millennials,29.63,White
-8,6,8,Female,,,White
-9,9,8,Male,Millennials,27.41,White
-5,10,8,Male,Millennials,33.26,White
-4,7,7,Female,Millennials,32.04,White
-8,5,7,Female,Millennials,32.03,White
-9,3,9,Female,Millennials,30.13,White
-7,6,7,Female,Millennials,30.01,Asian
-6,7,7,Female,Millennials,27.04,White
-8,5,7,Female,Millennials,32.17,White
-6,7,8,Female,Millennials,30.63,White
+3,7,9,Female,Millennials,20.25413275,White
+3,5,9,Male,Millennials,16.3226259,White
+5,8,9,Male,Millennials,19.81577659,White
+4,8,6,Female,Millennials,29.6486533,White
+8,6,8,Female,Traditionalists,117.9226259,White
+9,9,8,Male,Millennials,27.43495467,White
+5,10,8,Male,Millennials,33.27879029,White
+4,7,7,Female,Millennials,32.05687248,White
+8,5,7,Female,Millennials,32.05139303,White
+9,3,9,Female,Millennials,30.14728344,White
+7,6,7,Female,Millennials,30.02673549,Asian
+6,7,7,Female,Millennials,27.05687248,White
+8,5,7,Female,Millennials,32.19385878,White
+6,7,8,Female,Millennials,30.6486533,White
 8,6,6,Male,,,White
-9,6,9,Male,Millennials,34.13,White
-10,10,10,Male,Millennials,35.41,White
-10,6,10,Male,Millennials,32.15,White
-6,8,6,Male,Millennials,32.71,White
-8,8,8,Male,Millennials,32.28,White
-8,9,7,Male,Millennials,35.57,White
+9,6,9,Male,Millennials,34.14728344,White
+10,10,10,Male,Millennials,35.43221494,White
+10,6,10,Male,Millennials,32.17194097,White
+6,8,6,Male,Millennials,32.73358481,White
+8,8,8,Male,Millennials,32.30070809,White
+8,9,7,Male,Millennials,35.59111905,White
 9,8,6,Male,,,Black or African American
 6,4,7,Female,,,White
-7,6,7,Male,,,White
-8,6,7,Male,Gen-X,45.07,Asian
-9,8,8,Female,Millennials,28.09,White
-7,7,8,Female,Millennials,25.63,White
-8,8,8,Male,Millennials,32.65,White
-5,8,7,Male,Millennials,34.50,White
-7,8,8,Male,Millennials,33.77,Black or African American
-6,7,6,Female,Millennials,35.13,White
-8,8,8,Female,Millennials,31.40,Black or African American
-9,3,8,Female,Millennials,18.67,Black or African American
-7,9,7,Male,Gen-X,38.30,Black or African American
-3,7,8,Male,Millennials,31.55,White
-10,7,10,Male,Millennials,32.49,Black or African American
+7,6,7,Male,Traditionalists,117.9226259,White
+8,6,7,Male,Gen X,45.08974919,Asian
+9,8,8,Female,Millennials,28.10618755,White
+7,7,8,Female,Millennials,25.65413275,White
+8,8,8,Male,Millennials,32.67057111,White
+5,8,7,Male,Millennials,34.51714645,White
+7,8,8,Male,Millennials,33.79111905,Black or African American
+6,7,6,Female,Millennials,35.14728344,White
+8,8,8,Female,Millennials,31.41577659,Black or African American
+9,3,8,Female,Millennials,18.68974919,Black or African American
+7,9,7,Male,Gen X,38.31714645,Black or African American
+3,7,8,Male,Millennials,31.5746807,White
+10,7,10,Male,Millennials,32.511667,Black or African American
 8,9,8,Female,,,White
-8,9,8,Female,Baby Boomers,61.78,White
-8,9,8,Female,Millennials,32.32,White
-8,7,7,Female,Millennials,31.66,White
+8,9,8,Female,Baby Boomers,61.79933823,White
+8,9,8,Female,Millennials,32.33632453,White
+8,7,7,Female,Millennials,31.68153001,White
 7,6,7,Male,,,White
-8,5,8,Female,Gen-X,45.58,White
-8,8,8,Female,Millennials,32.51,White
-7,5,6,Female,Millennials,26.26,White
-8,3,6,Male,Millennials,30.29,Black or African American
-7,4,7,Female,Millennials,29.77,American Indian or Alaska Native
+8,5,8,Female,Gen X,45.59659851,White
+8,8,8,Female,Millennials,32.52810536,White
+7,5,6,Female,Millennials,26.28426974,White
+8,3,6,Male,Millennials,30.30618755,Black or African American
+7,4,7,Female,Millennials,29.78837933,American Indian or Alaska Native
 5,8,8,Female,,,White
-8,3,6,Female,Millennials,29.40,White
-9,7,8,Female,Baby Boomers,54.38,White
-7,9,8,Male,Millennials,31.24,White
-8,10,8,Female,Millennials,32.24,Asian
+8,3,6,Female,Millennials,29.41851631,White
+9,7,8,Female,Baby Boomers,54.39933823,White
+7,9,8,Male,Millennials,31.26509166,White
+8,10,8,Female,Millennials,32.25687248,Asian
 8,8,7,Male,,,White
-8,8,7,Male,Millennials,30.11,White
-6,7,8,Female,Millennials,29.14,White
-8,9,9,Female,Millennials,30.14,White
-5,4,6,Female,Millennials,27.97,White
-8,7,9,Female,Millennials,30.05,White
-6,8,7,Male,Millennials,29.66,White
+8,8,7,Male,Millennials,30.12536563,White
+6,7,8,Female,Millennials,29.15550262,White
+8,9,9,Female,Millennials,30.15824234,White
+5,4,6,Female,Millennials,27.99111905,White
+8,7,9,Female,Millennials,30.07331083,White
+6,8,7,Male,Millennials,29.67879029,White
 7,8,6,Male,,,White
-5,6,6,Male,Gen-X,37.66,Asian
+5,6,6,Male,Gen X,37.68153001,Asian
 6,7,7,Female,,,Asian
-3,7,8,Male,Millennials,30.25,Asian
+3,7,8,Male,Millennials,30.26783138,Asian
 5,7,8,Female,,,White
 6,5,8,Male,,,White
-6,8,6,Male,Gen-X,43.67,White
-9,6,8,Female,Millennials,25.36,White
-5,7,8,Male,Millennials,29.67,White
-5,6,6,Male,Millennials,34.19,White
-6,8,7,Female,Baby Boomers,59.53,White
-5,6,7,Female,Millennials,29.69,White
+6,8,6,Male,Gen X,43.68700946,White
+9,6,8,Female,Millennials,25.37742042,White
+5,7,8,Male,Millennials,29.69248892,White
+5,6,6,Male,Millennials,34.21029714,White
+6,8,7,Female,Baby Boomers,59.55276289,White
+5,6,7,Female,Millennials,29.70892727,White
+5,8,7,Female,Millennials,31.99933823,Asian
+7,7,8,Female,Millennials,34.01577659,White
+6,7,7,Male,Millennials,24.87605056,Asian
+8,7,7,Female,Baby Boomers,56.4596122,White
+8,7,8,Male,Millennials,30.72810536,White
+9,7,7,Male,Gen X,43.23221494,White
+5,8,6,Male,,,White
+8,5,8,Female,Millennials,33.65413275,White
+7,8,8,Male,Millennials,34.25139303,White
+9,8,7,Female,Millennials,31.84317385,White
+8,9,8,Male,Millennials,34.01303686,White
+7,9,9,Male,Millennials,34.16920125,White
+7,6,10,Female,,,White
+9,7,8,Male,Millennials,35.7226259,White
